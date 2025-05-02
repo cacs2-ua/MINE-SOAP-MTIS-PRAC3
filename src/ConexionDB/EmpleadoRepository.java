@@ -207,4 +207,51 @@ public class EmpleadoRepository {
         }
 	}
 	
+	public List<EmpleadosType> consultarTodosEmpleados () throws SQLException {
+		
+		List<EmpleadosType> empleados = new ArrayList<>();
+		Connection con = null;
+        PreparedStatement stmt = null;
+        ResultSet rs = null;
+        
+        try {
+        	con = this.conexion.conectar();
+        	
+        	String sql = "SELECT * FROM empleados;";
+        	stmt = con.prepareStatement(sql);
+        	rs = stmt.executeQuery();
+        	
+        	while (rs.next()) {
+        		EmpleadosType empleado = new EmpleadosType();
+        		
+                empleado.setId(rs.getInt("id"));
+                empleado.setNifnie(rs.getString("nifnie"));
+                empleado.setNombreApellidos(rs.getString("nombreApellidos"));
+                empleado.setEmail(rs.getString("email"));
+                empleado.setNaf(rs.getString("naf"));
+                empleado.setIban(rs.getString("iban"));
+                empleado.setIdNivel(rs.getInt("idNivel"));
+                empleado.setUsuario(rs.getString("usuario"));
+                empleado.setPassword(rs.getString("password"));
+                empleado.setValido(rs.getInt("valido"));
+                
+                empleados.add(empleado);
+        	}
+        	
+            if (empleados.isEmpty()) {
+                throw new NoSuchElementException("ADVERTENCIA: No existe ningún empleado "
+                						+ "en la base de datos. ");
+            }
+            
+            return empleados;
+        } catch (SQLException e) {
+            e.printStackTrace();
+            throw new SQLException(e.getMessage());
+        } finally {
+            try { if (rs != null) rs.close(); } catch (SQLException e) { e.printStackTrace(); }
+            try { if (stmt != null) stmt.close(); } catch (SQLException e) { e.printStackTrace(); }
+            try { if (con != null) con.close(); } catch (SQLException e) { e.printStackTrace(); }
+        }
+	}
+	
 }
