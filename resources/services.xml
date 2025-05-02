@@ -22,5 +22,9 @@
             <actionMapping>http://www.example.org/Empleados/borrar</actionMapping>
             <outputActionMapping>http://www.example.org/Empleados/Empleados/borrarResponse</outputActionMapping>
         </operation>
+        <operation name="consultarTodosEmpleados" mep="http://www.w3.org/ns/wsdl/in-out" namespace="http://www.example.org/Empleados/">
+            <actionMapping>http://www.example.org/Empleados/consultarTodosEmpleados</actionMapping>
+            <outputActionMapping>http://www.example.org/Empleados/Empleados/consultarTodosEmpleadosResponse</outputActionMapping>
+        </operation>
     </service>
 </serviceGroup>

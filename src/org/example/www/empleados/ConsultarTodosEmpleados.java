@@ -1,6 +1,6 @@
 
 /**
- * Consultar.java
+ * ConsultarTodosEmpleados.java
  *
  * This file was auto-generated from WSDL
  * by the Apache Axis2 version: 1.6.3  Built on : Jun 27, 2015 (11:18:31 BST)
@@ -11,49 +11,19 @@
             
 
             /**
-            *  Consultar bean class
+            *  ConsultarTodosEmpleados bean class
             */
             @SuppressWarnings({"unchecked","unused"})
         
-        public  class Consultar
+        public  class ConsultarTodosEmpleados
         implements org.apache.axis2.databinding.ADBBean{
         
                 public static final javax.xml.namespace.QName MY_QNAME = new javax.xml.namespace.QName(
                 "http://www.example.org/Empleados/",
-                "consultar",
+                "consultarTodosEmpleados",
                 "ns4");
 
             
-
-                        /**
-                        * field for Nifnie
-                        */
-
-                        
-                                    protected java.lang.String localNifnie ;
-                                
-
-                           /**
-                           * Auto generated getter method
-                           * @return java.lang.String
-                           */
-                           public  java.lang.String getNifnie(){
-                               return localNifnie;
-                           }
-
-                           
-                        
-                            /**
-                               * Auto generated setter method
-                               * @param param Nifnie
-                               */
-                               public void setNifnie(java.lang.String param){
-                            
-                                            this.localNifnie=param;
-                                       
-
-                               }
-                            
 
                         /**
                         * field for WSKey
@@ -133,35 +103,17 @@
                    java.lang.String namespacePrefix = registerPrefix(xmlWriter,"http://www.example.org/Empleados/");
                    if ((namespacePrefix != null) && (namespacePrefix.trim().length() > 0)){
                        writeAttribute("xsi","http://www.w3.org/2001/XMLSchema-instance","type",
-                           namespacePrefix+":consultar",
+                           namespacePrefix+":consultarTodosEmpleados",
                            xmlWriter);
                    } else {
                        writeAttribute("xsi","http://www.w3.org/2001/XMLSchema-instance","type",
-                           "consultar",
+                           "consultarTodosEmpleados",
                            xmlWriter);
                    }
 
                
                    }
                
-                                    namespace = "";
-                                    writeStartElement(null, namespace, "nifnie", xmlWriter);
-                             
-
-                                          if (localNifnie==null){
-                                              // write the nil attribute
-                                              
-                                                     throw new org.apache.axis2.databinding.ADBException("nifnie cannot be null!!");
-                                                  
-                                          }else{
-
-                                        
-                                                   xmlWriter.writeCharacters(localNifnie);
-                                            
-                                          }
-                                    
-                                   xmlWriter.writeEndElement();
-                             
                                     namespace = "";
                                     writeStartElement(null, namespace, "WSKey", xmlWriter);
                              
@@ -366,15 +318,6 @@
 
                 
                                       elementList.add(new javax.xml.namespace.QName("",
-                                                                      "nifnie"));
-                                 
-                                        if (localNifnie != null){
-                                            elementList.add(org.apache.axis2.databinding.utils.ConverterUtil.convertToString(localNifnie));
-                                        } else {
-                                           throw new org.apache.axis2.databinding.ADBException("nifnie cannot be null!!");
-                                        }
-                                    
-                                      elementList.add(new javax.xml.namespace.QName("",
                                                                       "WSKey"));
                                  
                                         if (localWSKey != null){
@@ -407,9 +350,9 @@
         * Postcondition: If this object is an element, the reader is positioned at its end element
         *                If this object is a complex type, the reader is positioned at the end element of its outer element
         */
-        public static Consultar parse(javax.xml.stream.XMLStreamReader reader) throws java.lang.Exception{
-            Consultar object =
-                new Consultar();
+        public static ConsultarTodosEmpleados parse(javax.xml.stream.XMLStreamReader reader) throws java.lang.Exception{
+            ConsultarTodosEmpleados object =
+                new ConsultarTodosEmpleados();
 
             int event;
             java.lang.String nillableValue = null;
@@ -433,10 +376,10 @@
 
                     java.lang.String type = fullTypeName.substring(fullTypeName.indexOf(":")+1);
                     
-                            if (!"consultar".equals(type)){
+                            if (!"consultarTodosEmpleados".equals(type)){
                                 //find namespace for the prefix
                                 java.lang.String nsUri = reader.getNamespaceContext().getNamespaceURI(nsPrefix);
-                                return (Consultar)org.example.www.empleados.ExtensionMapper.getTypeObject(
+                                return (ConsultarTodosEmpleados)org.example.www.empleados.ExtensionMapper.getTypeObject(
                                      nsUri,type,reader);
                               }
                         
@@ -458,31 +401,6 @@
                     
                     reader.next();
                 
-                                    
-                                    while (!reader.isStartElement() && !reader.isEndElement()) reader.next();
-                                
-                                    if (reader.isStartElement() && new javax.xml.namespace.QName("","nifnie").equals(reader.getName())){
-                                
-                                    nillableValue = reader.getAttributeValue("http://www.w3.org/2001/XMLSchema-instance","nil");
-                                    if ("true".equals(nillableValue) || "1".equals(nillableValue)){
-                                        throw new org.apache.axis2.databinding.ADBException("The element: "+"nifnie" +"  cannot be null");
-                                    }
-                                    
-
-                                    java.lang.String content = reader.getElementText();
-                                    
-                                              object.setNifnie(
-                                                    org.apache.axis2.databinding.utils.ConverterUtil.convertToString(content));
-                                              
-                                        reader.next();
-                                    
-                              }  // End of if for expected property start element
-                                
-                                else{
-                                    // A start element we are not expecting indicates an invalid parameter was passed
-                                    throw new org.apache.axis2.databinding.ADBException("Unexpected subelement " + reader.getName());
-                                }
-                            
                                     
                                     while (!reader.isStartElement() && !reader.isEndElement()) reader.next();
                                 

@@ -189,6 +189,24 @@ import utils.*;
             			return response;
             		}
         }
+                 
+                 
+         /**
+          * Auto generated method signature
+          * 
+                                      * @param consultarTodosEmpleados 
+              * @return consultarTodosEmpleadosResponse 
+          */
+         
+                  public org.example.www.empleados.ConsultarTodosEmpleadosResponse consultarTodosEmpleados
+                   (
+                   org.example.www.empleados.ConsultarTodosEmpleados consultarTodosEmpleados
+                   )
+             {
+                 //TODO : fill this with the necessary business logic
+                 throw new  java.lang.UnsupportedOperationException("Please implement " + this.getClass().getName() + "#consultarTodosEmpleados");
+         }
+                 
      
     }
     

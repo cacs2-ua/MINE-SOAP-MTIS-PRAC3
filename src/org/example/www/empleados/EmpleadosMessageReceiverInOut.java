@@ -39,78 +39,97 @@
 
             if("modificar".equals(methodName)){
                 
-                org.example.www.empleados.ModificarResponse modificarResponse17 = null;
+                org.example.www.empleados.ModificarResponse modificarResponse21 = null;
 	                        org.example.www.empleados.Modificar wrappedParam =
                                                              (org.example.www.empleados.Modificar)fromOM(
                                     msgContext.getEnvelope().getBody().getFirstElement(),
                                     org.example.www.empleados.Modificar.class,
                                     getEnvelopeNamespaces(msgContext.getEnvelope()));
                                                 
-                                               modificarResponse17 =
+                                               modificarResponse21 =
                                                    
                                                    
                                                          skel.modificar(wrappedParam)
                                                     ;
                                             
-                                        envelope = toEnvelope(getSOAPFactory(msgContext), modificarResponse17, false, new javax.xml.namespace.QName("http://www.example.org/Empleados/",
+                                        envelope = toEnvelope(getSOAPFactory(msgContext), modificarResponse21, false, new javax.xml.namespace.QName("http://www.example.org/Empleados/",
                                                     "modificar"));
                                     } else 
 
             if("consultar".equals(methodName)){
                 
-                org.example.www.empleados.ConsultarResponse consultarResponse19 = null;
+                org.example.www.empleados.ConsultarResponse consultarResponse23 = null;
 	                        org.example.www.empleados.Consultar wrappedParam =
                                                              (org.example.www.empleados.Consultar)fromOM(
                                     msgContext.getEnvelope().getBody().getFirstElement(),
                                     org.example.www.empleados.Consultar.class,
                                     getEnvelopeNamespaces(msgContext.getEnvelope()));
                                                 
-                                               consultarResponse19 =
+                                               consultarResponse23 =
                                                    
                                                    
                                                          skel.consultar(wrappedParam)
                                                     ;
                                             
-                                        envelope = toEnvelope(getSOAPFactory(msgContext), consultarResponse19, false, new javax.xml.namespace.QName("http://www.example.org/Empleados/",
+                                        envelope = toEnvelope(getSOAPFactory(msgContext), consultarResponse23, false, new javax.xml.namespace.QName("http://www.example.org/Empleados/",
                                                     "consultar"));
                                     } else 
 
             if("nuevo".equals(methodName)){
                 
-                org.example.www.empleados.NuevoResponse nuevoResponse21 = null;
+                org.example.www.empleados.NuevoResponse nuevoResponse25 = null;
 	                        org.example.www.empleados.Nuevo wrappedParam =
                                                              (org.example.www.empleados.Nuevo)fromOM(
                                     msgContext.getEnvelope().getBody().getFirstElement(),
                                     org.example.www.empleados.Nuevo.class,
                                     getEnvelopeNamespaces(msgContext.getEnvelope()));
                                                 
-                                               nuevoResponse21 =
+                                               nuevoResponse25 =
                                                    
                                                    
                                                          skel.nuevo(wrappedParam)
                                                     ;
                                             
-                                        envelope = toEnvelope(getSOAPFactory(msgContext), nuevoResponse21, false, new javax.xml.namespace.QName("http://www.example.org/Empleados/",
+                                        envelope = toEnvelope(getSOAPFactory(msgContext), nuevoResponse25, false, new javax.xml.namespace.QName("http://www.example.org/Empleados/",
                                                     "nuevo"));
                                     } else 
 
             if("borrar".equals(methodName)){
                 
-                org.example.www.empleados.BorrarResponse borrarResponse23 = null;
+                org.example.www.empleados.BorrarResponse borrarResponse27 = null;
 	                        org.example.www.empleados.Borrar wrappedParam =
                                                              (org.example.www.empleados.Borrar)fromOM(
                                     msgContext.getEnvelope().getBody().getFirstElement(),
                                     org.example.www.empleados.Borrar.class,
                                     getEnvelopeNamespaces(msgContext.getEnvelope()));
                                                 
-                                               borrarResponse23 =
+                                               borrarResponse27 =
                                                    
                                                    
                                                          skel.borrar(wrappedParam)
                                                     ;
                                             
-                                        envelope = toEnvelope(getSOAPFactory(msgContext), borrarResponse23, false, new javax.xml.namespace.QName("http://www.example.org/Empleados/",
+                                        envelope = toEnvelope(getSOAPFactory(msgContext), borrarResponse27, false, new javax.xml.namespace.QName("http://www.example.org/Empleados/",
                                                     "borrar"));
+                                    } else 
+
+            if("consultarTodosEmpleados".equals(methodName)){
+                
+                org.example.www.empleados.ConsultarTodosEmpleadosResponse consultarTodosEmpleadosResponse29 = null;
+	                        org.example.www.empleados.ConsultarTodosEmpleados wrappedParam =
+                                                             (org.example.www.empleados.ConsultarTodosEmpleados)fromOM(
+                                    msgContext.getEnvelope().getBody().getFirstElement(),
+                                    org.example.www.empleados.ConsultarTodosEmpleados.class,
+                                    getEnvelopeNamespaces(msgContext.getEnvelope()));
+                                                
+                                               consultarTodosEmpleadosResponse29 =
+                                                   
+                                                   
+                                                         skel.consultarTodosEmpleados(wrappedParam)
+                                                    ;
+                                            
+                                        envelope = toEnvelope(getSOAPFactory(msgContext), consultarTodosEmpleadosResponse29, false, new javax.xml.namespace.QName("http://www.example.org/Empleados/",
+                                                    "consultarTodosEmpleados"));
                                     
             } else {
               throw new java.lang.RuntimeException("method not found");
@@ -238,6 +257,34 @@
 
             }
         
+            private  org.apache.axiom.om.OMElement  toOM(org.example.www.empleados.ConsultarTodosEmpleados param, boolean optimizeContent)
+            throws org.apache.axis2.AxisFault {
+
+            
+                        try{
+                             return param.getOMElement(org.example.www.empleados.ConsultarTodosEmpleados.MY_QNAME,
+                                          org.apache.axiom.om.OMAbstractFactory.getOMFactory());
+                        } catch(org.apache.axis2.databinding.ADBException e){
+                            throw org.apache.axis2.AxisFault.makeFault(e);
+                        }
+                    
+
+            }
+        
+            private  org.apache.axiom.om.OMElement  toOM(org.example.www.empleados.ConsultarTodosEmpleadosResponse param, boolean optimizeContent)
+            throws org.apache.axis2.AxisFault {
+
+            
+                        try{
+                             return param.getOMElement(org.example.www.empleados.ConsultarTodosEmpleadosResponse.MY_QNAME,
+                                          org.apache.axiom.om.OMAbstractFactory.getOMFactory());
+                        } catch(org.apache.axis2.databinding.ADBException e){
+                            throw org.apache.axis2.AxisFault.makeFault(e);
+                        }
+                    
+
+            }
+        
                     private  org.apache.axiom.soap.SOAPEnvelope toEnvelope(org.apache.axiom.soap.SOAPFactory factory, org.example.www.empleados.ModificarResponse param, boolean optimizeContent, javax.xml.namespace.QName methodQName)
                         throws org.apache.axis2.AxisFault{
                       try{
@@ -314,6 +361,25 @@
                                 return wrappedElement;
                          }
                     
+                    private  org.apache.axiom.soap.SOAPEnvelope toEnvelope(org.apache.axiom.soap.SOAPFactory factory, org.example.www.empleados.ConsultarTodosEmpleadosResponse param, boolean optimizeContent, javax.xml.namespace.QName methodQName)
+                        throws org.apache.axis2.AxisFault{
+                      try{
+                          org.apache.axiom.soap.SOAPEnvelope emptyEnvelope = factory.getDefaultEnvelope();
+                           
+                                    emptyEnvelope.getBody().addChild(param.getOMElement(org.example.www.empleados.ConsultarTodosEmpleadosResponse.MY_QNAME,factory));
+                                
+
+                         return emptyEnvelope;
+                    } catch(org.apache.axis2.databinding.ADBException e){
+                        throw org.apache.axis2.AxisFault.makeFault(e);
+                    }
+                    }
+                    
+                         private org.example.www.empleados.ConsultarTodosEmpleadosResponse wrapconsultarTodosEmpleados(){
+                                org.example.www.empleados.ConsultarTodosEmpleadosResponse wrappedElement = new org.example.www.empleados.ConsultarTodosEmpleadosResponse();
+                                return wrappedElement;
+                         }
+                    
 
 
         /**
@@ -355,6 +421,20 @@
                 if (org.example.www.empleados.ConsultarResponse.class.equals(type)){
                 
                         return org.example.www.empleados.ConsultarResponse.Factory.parse(param.getXMLStreamReaderWithoutCaching());
+                    
+
+                }
+            
+                if (org.example.www.empleados.ConsultarTodosEmpleados.class.equals(type)){
+                
+                        return org.example.www.empleados.ConsultarTodosEmpleados.Factory.parse(param.getXMLStreamReaderWithoutCaching());
+                    
+
+                }
+            
+                if (org.example.www.empleados.ConsultarTodosEmpleadosResponse.class.equals(type)){
+                
+                        return org.example.www.empleados.ConsultarTodosEmpleadosResponse.Factory.parse(param.getXMLStreamReaderWithoutCaching());
                     
 
                 }

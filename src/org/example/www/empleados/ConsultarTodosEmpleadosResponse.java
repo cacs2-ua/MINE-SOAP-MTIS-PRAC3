@@ -1,6 +1,6 @@
 
 /**
- * Consultar.java
+ * ConsultarTodosEmpleadosResponse.java
  *
  * This file was auto-generated from WSDL
  * by the Apache Axis2 version: 1.6.3  Built on : Jun 27, 2015 (11:18:31 BST)
@@ -11,75 +11,137 @@
             
 
             /**
-            *  Consultar bean class
+            *  ConsultarTodosEmpleadosResponse bean class
             */
             @SuppressWarnings({"unchecked","unused"})
         
-        public  class Consultar
+        public  class ConsultarTodosEmpleadosResponse
         implements org.apache.axis2.databinding.ADBBean{
         
                 public static final javax.xml.namespace.QName MY_QNAME = new javax.xml.namespace.QName(
                 "http://www.example.org/Empleados/",
-                "consultar",
+                "consultarTodosEmpleadosResponse",
                 "ns4");
 
             
 
                         /**
-                        * field for Nifnie
+                        * field for Out
+                        * This was an Array!
                         */
 
                         
-                                    protected java.lang.String localNifnie ;
+                                    protected org.example.www.empleados.EmpleadosType[] localOut ;
                                 
+                           /*  This tracker boolean wil be used to detect whether the user called the set method
+                          *   for this attribute. It will be used to determine whether to include this field
+                           *   in the serialized XML
+                           */
+                           protected boolean localOutTracker = false ;
+
+                           public boolean isOutSpecified(){
+                               return localOutTracker;
+                           }
+
+                           
 
                            /**
                            * Auto generated getter method
-                           * @return java.lang.String
+                           * @return org.example.www.empleados.EmpleadosType[]
                            */
-                           public  java.lang.String getNifnie(){
-                               return localNifnie;
+                           public  org.example.www.empleados.EmpleadosType[] getOut(){
+                               return localOut;
                            }
 
                            
                         
-                            /**
-                               * Auto generated setter method
-                               * @param param Nifnie
-                               */
-                               public void setNifnie(java.lang.String param){
-                            
-                                            this.localNifnie=param;
-                                       
 
-                               }
+
+                               
+                              /**
+                               * validate the array for Out
+                               */
+                              protected void validateOut(org.example.www.empleados.EmpleadosType[] param){
+                             
+                              }
+
+
+                             /**
+                              * Auto generated setter method
+                              * @param param Out
+                              */
+                              public void setOut(org.example.www.empleados.EmpleadosType[] param){
+                              
+                                   validateOut(param);
+
+                               localOutTracker = param != null;
+                                      
+                                      this.localOut=param;
+                              }
+
+                               
+                             
+                             /**
+                             * Auto generated add method for the array for convenience
+                             * @param param org.example.www.empleados.EmpleadosType
+                             */
+                             public void addOut(org.example.www.empleados.EmpleadosType param){
+                                   if (localOut == null){
+                                   localOut = new org.example.www.empleados.EmpleadosType[]{};
+                                   }
+
                             
+                                 //update the setting tracker
+                                localOutTracker = true;
+                            
+
+                               java.util.List list =
+                            org.apache.axis2.databinding.utils.ConverterUtil.toList(localOut);
+                               list.add(param);
+                               this.localOut =
+                             (org.example.www.empleados.EmpleadosType[])list.toArray(
+                            new org.example.www.empleados.EmpleadosType[list.size()]);
+
+                             }
+                             
 
                         /**
-                        * field for WSKey
+                        * field for MesajeSalida
                         */
 
                         
-                                    protected java.lang.String localWSKey ;
+                                    protected java.lang.String localMesajeSalida ;
                                 
+                           /*  This tracker boolean wil be used to detect whether the user called the set method
+                          *   for this attribute. It will be used to determine whether to include this field
+                           *   in the serialized XML
+                           */
+                           protected boolean localMesajeSalidaTracker = false ;
+
+                           public boolean isMesajeSalidaSpecified(){
+                               return localMesajeSalidaTracker;
+                           }
+
+                           
 
                            /**
                            * Auto generated getter method
                            * @return java.lang.String
                            */
-                           public  java.lang.String getWSKey(){
-                               return localWSKey;
+                           public  java.lang.String getMesajeSalida(){
+                               return localMesajeSalida;
                            }
 
                            
                         
                             /**
                                * Auto generated setter method
-                               * @param param WSKey
+                               * @param param MesajeSalida
                                */
-                               public void setWSKey(java.lang.String param){
-                            
-                                            this.localWSKey=param;
+                               public void setMesajeSalida(java.lang.String param){
+                            localMesajeSalidaTracker = param != null;
+                                   
+                                            this.localMesajeSalida=param;
                                        
 
                                }
@@ -133,53 +195,53 @@
                    java.lang.String namespacePrefix = registerPrefix(xmlWriter,"http://www.example.org/Empleados/");
                    if ((namespacePrefix != null) && (namespacePrefix.trim().length() > 0)){
                        writeAttribute("xsi","http://www.w3.org/2001/XMLSchema-instance","type",
-                           namespacePrefix+":consultar",
+                           namespacePrefix+":consultarTodosEmpleadosResponse",
                            xmlWriter);
                    } else {
                        writeAttribute("xsi","http://www.w3.org/2001/XMLSchema-instance","type",
-                           "consultar",
+                           "consultarTodosEmpleadosResponse",
                            xmlWriter);
                    }
 
                
                    }
-               
+                if (localOutTracker){
+                                       if (localOut!=null){
+                                            for (int i = 0;i < localOut.length;i++){
+                                                if (localOut[i] != null){
+                                                 localOut[i].serialize(new javax.xml.namespace.QName("","out"),
+                                                           xmlWriter);
+                                                } else {
+                                                   
+                                                        // we don't have to do any thing since minOccures is zero
+                                                    
+                                                }
+
+                                            }
+                                     } else {
+                                        
+                                               throw new org.apache.axis2.databinding.ADBException("out cannot be null!!");
+                                        
+                                    }
+                                 } if (localMesajeSalidaTracker){
                                     namespace = "";
-                                    writeStartElement(null, namespace, "nifnie", xmlWriter);
+                                    writeStartElement(null, namespace, "mesajeSalida", xmlWriter);
                              
 
-                                          if (localNifnie==null){
+                                          if (localMesajeSalida==null){
                                               // write the nil attribute
                                               
-                                                     throw new org.apache.axis2.databinding.ADBException("nifnie cannot be null!!");
+                                                     throw new org.apache.axis2.databinding.ADBException("mesajeSalida cannot be null!!");
                                                   
                                           }else{
 
                                         
-                                                   xmlWriter.writeCharacters(localNifnie);
+                                                   xmlWriter.writeCharacters(localMesajeSalida);
                                             
                                           }
                                     
                                    xmlWriter.writeEndElement();
-                             
-                                    namespace = "";
-                                    writeStartElement(null, namespace, "WSKey", xmlWriter);
-                             
-
-                                          if (localWSKey==null){
-                                              // write the nil attribute
-                                              
-                                                     throw new org.apache.axis2.databinding.ADBException("WSKey cannot be null!!");
-                                                  
-                                          }else{
-
-                                        
-                                                   xmlWriter.writeCharacters(localWSKey);
-                                            
-                                          }
-                                    
-                                   xmlWriter.writeEndElement();
-                             
+                             }
                     xmlWriter.writeEndElement();
                
 
@@ -364,25 +426,37 @@
                  java.util.ArrayList elementList = new java.util.ArrayList();
                  java.util.ArrayList attribList = new java.util.ArrayList();
 
-                
-                                      elementList.add(new javax.xml.namespace.QName("",
-                                                                      "nifnie"));
+                 if (localOutTracker){
+                             if (localOut!=null) {
+                                 for (int i = 0;i < localOut.length;i++){
+
+                                    if (localOut[i] != null){
+                                         elementList.add(new javax.xml.namespace.QName("",
+                                                                          "out"));
+                                         elementList.add(localOut[i]);
+                                    } else {
+                                        
+                                                // nothing to do
+                                            
+                                    }
+
+                                 }
+                             } else {
                                  
-                                        if (localNifnie != null){
-                                            elementList.add(org.apache.axis2.databinding.utils.ConverterUtil.convertToString(localNifnie));
-                                        } else {
-                                           throw new org.apache.axis2.databinding.ADBException("nifnie cannot be null!!");
-                                        }
+                                        throw new org.apache.axis2.databinding.ADBException("out cannot be null!!");
                                     
+                             }
+
+                        } if (localMesajeSalidaTracker){
                                       elementList.add(new javax.xml.namespace.QName("",
-                                                                      "WSKey"));
+                                                                      "mesajeSalida"));
                                  
-                                        if (localWSKey != null){
-                                            elementList.add(org.apache.axis2.databinding.utils.ConverterUtil.convertToString(localWSKey));
+                                        if (localMesajeSalida != null){
+                                            elementList.add(org.apache.axis2.databinding.utils.ConverterUtil.convertToString(localMesajeSalida));
                                         } else {
-                                           throw new org.apache.axis2.databinding.ADBException("WSKey cannot be null!!");
+                                           throw new org.apache.axis2.databinding.ADBException("mesajeSalida cannot be null!!");
                                         }
-                                    
+                                    }
 
                 return new org.apache.axis2.databinding.utils.reader.ADBXMLStreamReaderImpl(qName, elementList.toArray(), attribList.toArray());
             
@@ -407,9 +481,9 @@
         * Postcondition: If this object is an element, the reader is positioned at its end element
         *                If this object is a complex type, the reader is positioned at the end element of its outer element
         */
-        public static Consultar parse(javax.xml.stream.XMLStreamReader reader) throws java.lang.Exception{
-            Consultar object =
-                new Consultar();
+        public static ConsultarTodosEmpleadosResponse parse(javax.xml.stream.XMLStreamReader reader) throws java.lang.Exception{
+            ConsultarTodosEmpleadosResponse object =
+                new ConsultarTodosEmpleadosResponse();
 
             int event;
             java.lang.String nillableValue = null;
@@ -433,10 +507,10 @@
 
                     java.lang.String type = fullTypeName.substring(fullTypeName.indexOf(":")+1);
                     
-                            if (!"consultar".equals(type)){
+                            if (!"consultarTodosEmpleadosResponse".equals(type)){
                                 //find namespace for the prefix
                                 java.lang.String nsUri = reader.getNamespaceContext().getNamespaceURI(nsPrefix);
-                                return (Consultar)org.example.www.empleados.ExtensionMapper.getTypeObject(
+                                return (ConsultarTodosEmpleadosResponse)org.example.www.empleados.ExtensionMapper.getTypeObject(
                                      nsUri,type,reader);
                               }
                         
@@ -458,56 +532,78 @@
                     
                     reader.next();
                 
+                        java.util.ArrayList list1 = new java.util.ArrayList();
+                    
                                     
                                     while (!reader.isStartElement() && !reader.isEndElement()) reader.next();
                                 
-                                    if (reader.isStartElement() && new javax.xml.namespace.QName("","nifnie").equals(reader.getName())){
+                                    if (reader.isStartElement() && new javax.xml.namespace.QName("","out").equals(reader.getName())){
+                                
+                                    
+                                    
+                                    // Process the array and step past its final element's end.
+                                    list1.add(org.example.www.empleados.EmpleadosType.Factory.parse(reader));
+                                                                
+                                                        //loop until we find a start element that is not part of this array
+                                                        boolean loopDone1 = false;
+                                                        while(!loopDone1){
+                                                            // We should be at the end element, but make sure
+                                                            while (!reader.isEndElement())
+                                                                reader.next();
+                                                            // Step out of this element
+                                                            reader.next();
+                                                            // Step to next element event.
+                                                            while (!reader.isStartElement() && !reader.isEndElement())
+                                                                reader.next();
+                                                            if (reader.isEndElement()){
+                                                                //two continuous end elements means we are exiting the xml structure
+                                                                loopDone1 = true;
+                                                            } else {
+                                                                if (new javax.xml.namespace.QName("","out").equals(reader.getName())){
+                                                                    list1.add(org.example.www.empleados.EmpleadosType.Factory.parse(reader));
+                                                                        
+                                                                }else{
+                                                                    loopDone1 = true;
+                                                                }
+                                                            }
+                                                        }
+                                                        // call the converter utility  to convert and set the array
+                                                        
+                                                        object.setOut((org.example.www.empleados.EmpleadosType[])
+                                                            org.apache.axis2.databinding.utils.ConverterUtil.convertToArray(
+                                                                org.example.www.empleados.EmpleadosType.class,
+                                                                list1));
+                                                            
+                              }  // End of if for expected property start element
+                                
+                                    else {
+                                        
+                                    }
+                                
+                                    
+                                    while (!reader.isStartElement() && !reader.isEndElement()) reader.next();
+                                
+                                    if (reader.isStartElement() && new javax.xml.namespace.QName("","mesajeSalida").equals(reader.getName())){
                                 
                                     nillableValue = reader.getAttributeValue("http://www.w3.org/2001/XMLSchema-instance","nil");
                                     if ("true".equals(nillableValue) || "1".equals(nillableValue)){
-                                        throw new org.apache.axis2.databinding.ADBException("The element: "+"nifnie" +"  cannot be null");
+                                        throw new org.apache.axis2.databinding.ADBException("The element: "+"mesajeSalida" +"  cannot be null");
                                     }
                                     
 
                                     java.lang.String content = reader.getElementText();
                                     
-                                              object.setNifnie(
+                                              object.setMesajeSalida(
                                                     org.apache.axis2.databinding.utils.ConverterUtil.convertToString(content));
                                               
                                         reader.next();
                                     
                               }  // End of if for expected property start element
                                 
-                                else{
-                                    // A start element we are not expecting indicates an invalid parameter was passed
-                                    throw new org.apache.axis2.databinding.ADBException("Unexpected subelement " + reader.getName());
-                                }
-                            
-                                    
-                                    while (!reader.isStartElement() && !reader.isEndElement()) reader.next();
-                                
-                                    if (reader.isStartElement() && new javax.xml.namespace.QName("","WSKey").equals(reader.getName())){
-                                
-                                    nillableValue = reader.getAttributeValue("http://www.w3.org/2001/XMLSchema-instance","nil");
-                                    if ("true".equals(nillableValue) || "1".equals(nillableValue)){
-                                        throw new org.apache.axis2.databinding.ADBException("The element: "+"WSKey" +"  cannot be null");
+                                    else {
+                                        
                                     }
-                                    
-
-                                    java.lang.String content = reader.getElementText();
-                                    
-                                              object.setWSKey(
-                                                    org.apache.axis2.databinding.utils.ConverterUtil.convertToString(content));
-                                              
-                                        reader.next();
-                                    
-                              }  // End of if for expected property start element
-                                
-                                else{
-                                    // A start element we are not expecting indicates an invalid parameter was passed
-                                    throw new org.apache.axis2.databinding.ADBException("Unexpected subelement " + reader.getName());
-                                }
-                              
+                                  
                             while (!reader.isStartElement() && !reader.isEndElement())
                                 reader.next();
                             
